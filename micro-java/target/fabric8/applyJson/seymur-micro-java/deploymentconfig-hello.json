@@ -1,0 +1,250 @@
+{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/git-branch" : "micro-java",
+      "fabric8.io/git-commit" : "f82582c8ecb2d4bd3670252f287cc9e2d1f25fd0",
+      "fabric8.io/git-url" : "git@github.com:rumyesHo/DO288-apps.git"
+    },
+    "creationTimestamp" : "2021-04-19T09:51:37Z",
+    "generation" : 1,
+    "labels" : {
+      "app" : "hello",
+      "group" : "com.redhat.training.openshift",
+      "provider" : "fabric8",
+      "version" : "1.0"
+    },
+    "name" : "hello",
+    "namespace" : "seymur-micro-java",
+    "resourceVersion" : "30151874",
+    "selfLink" : "/apis/apps.openshift.io/v1/namespaces/seymur-micro-java/deploymentconfigs/hello",
+    "uid" : "b8862ddc-b86c-4980-a4f3-3a2e050d715a",
+    "managedFields" : [ {
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "apiVersion" : "apps.openshift.io/v1",
+      "time" : "2021-04-19T09:51:37Z",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:fabric8.io/git-branch" : { },
+            "f:fabric8.io/git-commit" : { },
+            "f:fabric8.io/git-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:replicas" : { },
+          "f:revisionHistoryLimit" : { },
+          "f:selector" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { }
+          },
+          "f:strategy" : {
+            "f:activeDeadlineSeconds" : { },
+            "f:rollingParams" : {
+              "." : { },
+              "f:intervalSeconds" : { },
+              "f:maxSurge" : { },
+              "f:maxUnavailable" : { },
+              "f:timeoutSeconds" : { },
+              "f:updatePeriodSeconds" : { }
+            },
+            "f:type" : { }
+          },
+          "f:template" : {
+            "." : { },
+            "f:metadata" : {
+              "." : { },
+              "f:annotations" : {
+                "." : { },
+                "f:fabric8.io/git-branch" : { },
+                "f:fabric8.io/git-commit" : { },
+                "f:fabric8.io/git-url" : { }
+              },
+              "f:creationTimestamp" : { },
+              "f:labels" : {
+                "." : { },
+                "f:app" : { },
+                "f:group" : { },
+                "f:provider" : { },
+                "f:version" : { }
+              }
+            },
+            "f:spec" : {
+              "." : { },
+              "f:containers" : {
+                "." : { },
+                "k:{\"name\":\"thorntail-v2\"}" : {
+                  "." : { },
+                  "f:env" : {
+                    "." : { },
+                    "k:{\"name\":\"KUBERNETES_NAMESPACE\"}" : {
+                      "." : { },
+                      "f:name" : { },
+                      "f:valueFrom" : {
+                        "." : { },
+                        "f:fieldRef" : {
+                          "." : { },
+                          "f:apiVersion" : { },
+                          "f:fieldPath" : { }
+                        }
+                      }
+                    }
+                  },
+                  "f:image" : { },
+                  "f:imagePullPolicy" : { },
+                  "f:name" : { },
+                  "f:ports" : {
+                    "." : { },
+                    "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":8778,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":9779,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    }
+                  },
+                  "f:resources" : { },
+                  "f:securityContext" : {
+                    "." : { },
+                    "f:privileged" : { }
+                  },
+                  "f:terminationMessagePath" : { },
+                  "f:terminationMessagePolicy" : { }
+                }
+              },
+              "f:dnsPolicy" : { },
+              "f:restartPolicy" : { },
+              "f:schedulerName" : { },
+              "f:securityContext" : { },
+              "f:terminationGracePeriodSeconds" : { }
+            }
+          },
+          "f:triggers" : { }
+        }
+      }
+    } ]
+  },
+  "spec" : {
+    "replicas" : 1,
+    "revisionHistoryLimit" : 2,
+    "selector" : {
+      "app" : "hello",
+      "group" : "com.redhat.training.openshift",
+      "provider" : "fabric8"
+    },
+    "strategy" : {
+      "activeDeadlineSeconds" : 21600,
+      "resources" : { },
+      "rollingParams" : {
+        "intervalSeconds" : 1,
+        "maxSurge" : "25%",
+        "maxUnavailable" : "25%",
+        "timeoutSeconds" : 3600,
+        "updatePeriodSeconds" : 1
+      },
+      "type" : "Rolling"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "fabric8.io/git-branch" : "micro-java",
+          "fabric8.io/git-commit" : "f82582c8ecb2d4bd3670252f287cc9e2d1f25fd0",
+          "fabric8.io/git-url" : "git@github.com:rumyesHo/DO288-apps.git"
+        },
+        "labels" : {
+          "app" : "hello",
+          "group" : "com.redhat.training.openshift",
+          "provider" : "fabric8",
+          "version" : "1.0"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          } ],
+          "image" : "hello:1.0",
+          "imagePullPolicy" : "IfNotPresent",
+          "name" : "thorntail-v2",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 9779,
+            "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8778,
+            "name" : "jolokia",
+            "protocol" : "TCP"
+          } ],
+          "resources" : { },
+          "securityContext" : {
+            "privileged" : false
+          },
+          "terminationMessagePath" : "/dev/termination-log",
+          "terminationMessagePolicy" : "File"
+        } ],
+        "dnsPolicy" : "ClusterFirst",
+        "restartPolicy" : "Always",
+        "schedulerName" : "default-scheduler",
+        "securityContext" : { },
+        "terminationGracePeriodSeconds" : 30
+      }
+    },
+    "test" : false,
+    "triggers" : [ {
+      "type" : "ConfigChange"
+    }, {
+      "imageChangeParams" : {
+        "automatic" : true,
+        "containerNames" : [ "thorntail-v2" ],
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "hello:1.0",
+          "namespace" : "seymur-micro-java"
+        }
+      },
+      "type" : "ImageChange"
+    } ]
+  },
+  "status" : {
+    "availableReplicas" : 0,
+    "latestVersion" : 0,
+    "observedGeneration" : 0,
+    "replicas" : 0,
+    "unavailableReplicas" : 0,
+    "updatedReplicas" : 0
+  }
+}

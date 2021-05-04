@@ -5,7 +5,7 @@ pipeline {
     }
     agent {
       node {
-         label: 'master'
+        label 'master'
       }
     }
 
@@ -22,12 +22,14 @@ pipeline {
                 }
             }
         }
+
         stage('stage 2') {
           steps {
             sh 'echo hello from stage 2!'
-          } 
+          }
         }
 
+        // TODO: ADD AN APPROVAL STAGE
         stage('manual approval') {
           steps {
             timeout(time: 60, unit: 'MINUTES') {
@@ -35,10 +37,6 @@ pipeline {
             }
           }
         }
-
-        // TODO: ADD A STAGE THAT SAYS HELLO
-
-        // TODO: ADD AN APPROVAL STAGE
 
         stage('stage 3') {
             steps {

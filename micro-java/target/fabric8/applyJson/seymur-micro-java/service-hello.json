@@ -1,0 +1,92 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/git-branch" : "micro-java",
+      "fabric8.io/git-commit" : "f82582c8ecb2d4bd3670252f287cc9e2d1f25fd0",
+      "fabric8.io/git-url" : "git@github.com:rumyesHo/DO288-apps.git",
+      "prometheus.io/port" : "9779",
+      "prometheus.io/scrape" : "true"
+    },
+    "creationTimestamp" : "2021-04-19T09:51:36Z",
+    "labels" : {
+      "app" : "hello",
+      "expose" : "true",
+      "group" : "com.redhat.training.openshift",
+      "provider" : "fabric8",
+      "version" : "1.0"
+    },
+    "name" : "hello",
+    "namespace" : "seymur-micro-java",
+    "resourceVersion" : "30151857",
+    "selfLink" : "/api/v1/namespaces/seymur-micro-java/services/hello",
+    "uid" : "a222950c-7f81-4237-969d-81be0b00fdd2",
+    "managedFields" : [ {
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "apiVersion" : "v1",
+      "time" : "2021-04-19T09:51:36Z",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:fabric8.io/git-branch" : { },
+            "f:fabric8.io/git-commit" : { },
+            "f:fabric8.io/git-url" : { },
+            "f:prometheus.io/port" : { },
+            "f:prometheus.io/scrape" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:expose" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:ports" : {
+            "." : { },
+            "k:{\"port\":8080,\"protocol\":\"TCP\"}" : {
+              "." : { },
+              "f:name" : { },
+              "f:port" : { },
+              "f:protocol" : { },
+              "f:targetPort" : { }
+            }
+          },
+          "f:selector" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { }
+          },
+          "f:sessionAffinity" : { },
+          "f:type" : { }
+        }
+      }
+    } ]
+  },
+  "spec" : {
+    "clusterIP" : "172.30.32.4",
+    "ports" : [ {
+      "name" : "http",
+      "port" : 8080,
+      "protocol" : "TCP",
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app" : "hello",
+      "group" : "com.redhat.training.openshift",
+      "provider" : "fabric8"
+    },
+    "sessionAffinity" : "None",
+    "type" : "ClusterIP"
+  },
+  "status" : {
+    "loadBalancer" : { }
+  }
+}
