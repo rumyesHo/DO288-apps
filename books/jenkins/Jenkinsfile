@@ -145,7 +145,6 @@ pipeline {
                             return (it.object().status.phase == "Running")
                           }
                         }
-                        //TODO: Watch deployment until pod is in 'Running' state
 
                         echo "Deployment to Staging env is complete. Access the app at the URL http://${routeHost}."
                     }
